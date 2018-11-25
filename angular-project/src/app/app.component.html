@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<div>
+    <h3>Here is my search Giphy tool</h3>
+    <input type="text" [(ngModel)]="searchGiphy">
+    <input type="button" value="Search for GIF" (click)="searchForGifs(searchGiphy)">
+</div>
+<div>
+  <span *ngIf="noResultsMessage && noResultsMessage.length > 0">{{noResultsMessage}}</span>
+</div>
+<div>
+  <img width="300" *ngIf="giphyResult" style="padding-top: 15px;" src ="{{giphyResult}}">
+</div>
+
+<router-outlet></router-outlet>
